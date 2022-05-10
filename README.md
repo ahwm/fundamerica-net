@@ -12,7 +12,7 @@ bool useSandbox = true;
 var client = new FundAmericaClient(key, useSandbox);
 var offering = await client.CreateOfferingAsync(new OfferingType
 {
-    Name = content.Name,
+    Name = offeringName
     AccreditedInvestors = true,
     Amount = amount,
     EntityId = issuerId,
