@@ -6,9 +6,9 @@
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<Authors>Adam Humpherys</Authors>
-		<Version>0.1.0</Version>
+		<Version>0.2.0</Version>
 		<AssemblyVersion>1.0.0.0</AssemblyVersion>
-		<PackageReleaseNotes>Initial release</PackageReleaseNotes>
+		<PackageReleaseNotes>Fixed error with subscription agreements attached to investments</PackageReleaseNotes>
 		<PackageProjectUrl>https://github.com/ahwm/fundamerica-net</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/ahwm/fundamerica-net</RepositoryUrl>
 		<Copyright>(c) 2022 Adam Humpherys</Copyright>
