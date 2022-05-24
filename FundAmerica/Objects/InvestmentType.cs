@@ -158,8 +158,17 @@ namespace FundAmerica.Objects
         [JsonProperty(PropertyName = "status")]
         public string Status { get; set; }
 
+        [JsonProperty(PropertyName = "subscription_agreement_id")]
+        public string SubscriptionAgreementId { get; set; }
+
+        [JsonProperty(PropertyName = "external_subscription_agreement")]
+        public string ExternalSubscriptionAgreement { get; set; }
+
         [JsonProperty(PropertyName = "subscription_agreement_url")]
         public string SubscriptionAgreementUrl { get; set; }
+
+        [JsonProperty(PropertyName = "title_iii_invested_in_last_year")]
+        public string TitleIIIInvestedInLastYear { get; set; }
 
         [JsonProperty(PropertyName = "trade_review_status")]
         public string TradeReviewStatus { get; set; }

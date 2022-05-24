@@ -33,7 +33,7 @@ namespace FundAmerica.Objects
         public SubscriptionData Data { get; set; }
 
         [JsonProperty(PropertyName = "investment")]
-        public string Investment { get; set; }
+        public InvestmentType Investment { get; set; }
 
         [JsonProperty(PropertyName = "issuer_signed")]
         public bool IssuerSigned { get; set; }

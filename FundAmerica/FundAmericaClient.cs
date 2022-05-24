@@ -168,6 +168,17 @@ namespace FundAmerica
             return await response.Content.ReadAsAsync<InvestmentType>();
         }
 
+        public async Task<ResponseType<InvestmentType>> GetOfferingInvestmentsAsync(string id)
+        {
+            var response = await httpClient.GetAsync($"offerings/{id}/investments");
+            if (!response.IsSuccessStatusCode)
+            {
+                var data = await response.Content.ReadAsAsync<Dictionary<string, object>>();
+                throw new Exception(JsonConvert.SerializeObject(data, Formatting.Indented));
+            }
+            return await response.Content.ReadAsAsync<ResponseType<InvestmentType>>();
+        }
+
         public async Task<InvestmentType> CreateInvestmentAsync(InvestmentRequest investmentType)
         {
             string invData = JsonConvert.SerializeObject(investmentType, new JsonSerializerSettings
@@ -311,7 +322,6 @@ namespace FundAmerica
         public void Dispose()
         {
             httpClient.Dispose();
-            GC.SuppressFinalize(this);
         }
     }
 }
