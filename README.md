@@ -1,8 +1,18 @@
 # FundAmerica for .NET
 
-API Docs: https://docs.fundamerica.com/
+[![NuGet Status](https://buildstats.info/nuget/FundAmerica.NET)](https://www.nuget.org/packages/FundAmerica.NET/)
 
-Sandbox: https://my-sandbox.fundamerica.com/
+```bat
+PM> Install-Package FundAmerica.NET
+```
+
+```bat
+dotnet add package FundAmerica.NET
+```
+
+API Docs: <https://docs.fundamerica.com/>
+
+Sandbox: <https://my-sandbox.fundamerica.com/>
 
 ## Usage
 
