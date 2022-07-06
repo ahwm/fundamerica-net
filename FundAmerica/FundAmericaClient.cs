@@ -26,12 +26,12 @@ namespace FundAmerica
 
         public async Task<ResponseType<OfferingType>> GetOfferingsAsync(int? per = null, int? page = null)
         {
-            List<string> params = new List<string>();
+            List<string> @params = new List<string>();
             if (per != null)
-                params.Add($"per={per}");
+                @params.Add($"per={per}");
             if (page != null)
-                params.Add($"page={page}");
-            var response = await httpClient.GetAsync($"offerings{(params.Count > 0 ? $"?{String.Join("&", params)}" : "")}");
+                @params.Add($"page={page}");
+            var response = await httpClient.GetAsync($"offerings{(@params.Count > 0 ? $"?{String.Join("&", @params)}" : "")}");
             if (!response.IsSuccessStatusCode)
             {
                 var data = await response.Content.ReadAsAsync<Dictionary<string, object>>();
@@ -93,12 +93,12 @@ namespace FundAmerica
 
         public async Task<ResponseType<EntityType>> GetEntitiesAsync(int? per = null, int? page = null)
         {
-            List<string> params = new List<string>();
+            List<string> @params = new List<string>();
             if (per != null)
-                params.Add($"per={per}");
+                @params.Add($"per={per}");
             if (page != null)
-                params.Add($"page={page}");
-            var response = await httpClient.GetAsync($"entities{(params.Count > 0 ? $"?{String.Join("&", params)}" : "")}");
+                @params.Add($"page={page}");
+            var response = await httpClient.GetAsync($"entities{(@params.Count > 0 ? $"?{String.Join("&", @params)}" : "")}");
             if (!response.IsSuccessStatusCode)
             {
                 var data = await response.Content.ReadAsAsync<Dictionary<string, object>>();
@@ -158,12 +158,12 @@ namespace FundAmerica
 
         public async Task<ResponseType<InvestmentType>> GetInvestmentsAsync(int? per = null, int? page = null)
         {
-            List<string> params = new List<string>();
+            List<string> @params = new List<string>();
             if (per != null)
-                params.Add($"per={per}");
+                @params.Add($"per={per}");
             if (page != null)
-                params.Add($"page={page}");
-            var response = await httpClient.GetAsync($"investments{(params.Count > 0 ? $"?{String.Join("&", params)}" : "")}");
+                @params.Add($"page={page}");
+            var response = await httpClient.GetAsync($"investments{(@params.Count > 0 ? $"?{String.Join("&", @params)}" : "")}");
             if (!response.IsSuccessStatusCode)
             {
                 var data = await response.Content.ReadAsAsync<Dictionary<string, object>>();
@@ -248,12 +248,12 @@ namespace FundAmerica
 
         public async Task<ResponseType<SubscriptionAgreement>> GetSubscriptionAgreementsAsync(int? per = null, int? page = null)
         {
-            List<string> params = new List<string>();
+            List<string> @params = new List<string>();
             if (per != null)
-                params.Add($"per={per}");
+                @params.Add($"per={per}");
             if (page != null)
-                params.Add($"page={page}");
-            var response = await httpClient.GetAsync($"subscription_agreements{(params.Count > 0 ? $"?{String.Join("&", params)}" : "")}");
+                @params.Add($"page={page}");
+            var response = await httpClient.GetAsync($"subscription_agreements{(@params.Count > 0 ? $"?{String.Join("&", @params)}" : "")}");
             if (!response.IsSuccessStatusCode)
             {
                 var data = await response.Content.ReadAsAsync<Dictionary<string, object>>();
