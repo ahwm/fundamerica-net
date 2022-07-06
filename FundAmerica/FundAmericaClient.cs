@@ -24,9 +24,14 @@ namespace FundAmerica
             httpClient.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue(productName, productVersion));
         }
 
-        public async Task<ResponseType<OfferingType>> GetOfferingsAsync()
+        public async Task<ResponseType<OfferingType>> GetOfferingsAsync(int? per = null, int? page = null)
         {
-            var response = await httpClient.GetAsync("offerings");
+            List<string> params = new List<string>();
+            if (per != null)
+                params.Add($"per={per}");
+            if (page != null)
+                params.Add($"page={page}");
+            var response = await httpClient.GetAsync($"offerings{(params.Count > 0 ? $"?{String.Join("&", params)}" : "")}");
             if (!response.IsSuccessStatusCode)
             {
                 var data = await response.Content.ReadAsAsync<Dictionary<string, object>>();
@@ -67,7 +72,7 @@ namespace FundAmerica
         public async Task<OfferingType> UpdateOfferingAsync(OfferingType offeringType)
         {
             using (var content = new StringContent(JsonConvert.SerializeObject(offeringType, new JsonSerializerSettings
-{
+            {
                 NullValueHandling = NullValueHandling.Ignore
             }), Encoding.UTF8, "application/json"))
             using (var request = new HttpRequestMessage(new HttpMethod("PATCH"), $"offerings/{offeringType.Id}")
@@ -86,9 +91,14 @@ namespace FundAmerica
             }
         }
 
-        public async Task<ResponseType<EntityType>> GetEntitiesAsync()
+        public async Task<ResponseType<EntityType>> GetEntitiesAsync(int? per = null, int? page = null)
         {
-            var response = await httpClient.GetAsync("entities");
+            List<string> params = new List<string>();
+            if (per != null)
+                params.Add($"per={per}");
+            if (page != null)
+                params.Add($"page={page}");
+            var response = await httpClient.GetAsync($"entities{(params.Count > 0 ? $"?{String.Join("&", params)}" : "")}");
             if (!response.IsSuccessStatusCode)
             {
                 var data = await response.Content.ReadAsAsync<Dictionary<string, object>>();
@@ -146,9 +156,14 @@ namespace FundAmerica
             }
         }
 
-        public async Task<ResponseType<InvestmentType>> GetInvestmentsAsync()
+        public async Task<ResponseType<InvestmentType>> GetInvestmentsAsync(int? per = null, int? page = null)
         {
-            var response = await httpClient.GetAsync("investments");
+            List<string> params = new List<string>();
+            if (per != null)
+                params.Add($"per={per}");
+            if (page != null)
+                params.Add($"page={page}");
+            var response = await httpClient.GetAsync($"investments{(params.Count > 0 ? $"?{String.Join("&", params)}" : "")}");
             if (!response.IsSuccessStatusCode)
             {
                 var data = await response.Content.ReadAsAsync<Dictionary<string, object>>();
@@ -231,9 +246,14 @@ namespace FundAmerica
             }
         }
 
-        public async Task<ResponseType<SubscriptionAgreement>> GetSubscriptionAgreementsAsync()
+        public async Task<ResponseType<SubscriptionAgreement>> GetSubscriptionAgreementsAsync(int? per = null, int? page = null)
         {
-            var response = await httpClient.GetAsync("subscription_agreements");
+            List<string> params = new List<string>();
+            if (per != null)
+                params.Add($"per={per}");
+            if (page != null)
+                params.Add($"page={page}");
+            var response = await httpClient.GetAsync($"subscription_agreements{(params.Count > 0 ? $"?{String.Join("&", params)}" : "")}");
             if (!response.IsSuccessStatusCode)
             {
                 var data = await response.Content.ReadAsAsync<Dictionary<string, object>>();
