@@ -1,7 +1,5 @@
 # FundAmerica for .NET
 
-[![NuGet Status](https://buildstats.info/nuget/FundAmerica.NET)](https://www.nuget.org/packages/FundAmerica.NET/)
-
 ```bat
 PM> Install-Package FundAmerica.NET
 ```
